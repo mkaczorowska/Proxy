@@ -1,6 +1,7 @@
 package com.mkaczorowska.proxy;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,7 +44,7 @@ public class RepositoriesApi {
                 }
                 repositoryList.add(repo);
             }
-        } catch (IOException e) {
+        } catch (IOException | JSONException e) {
             e.printStackTrace();
         }
         return repositoryList;
